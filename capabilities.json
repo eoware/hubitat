@@ -1,0 +1,1641 @@
+[{
+		"name": "AccelerationSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "acceleration",
+				"type": "ENUM",
+				"enumValues": ["inactive", "active"]
+			}
+		]
+	}, {
+		"name": "Actuator",
+		"id": "capability.accelerationSensor"
+	}, {
+		"name": "Alarm",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "both"
+			}, {
+				"name": "off"
+			}, {
+				"name": "siren"
+			}, {
+				"name": "strobe"
+			}
+		],
+		"attributes": [{
+				"name": "alarm",
+				"type": "ENUM",
+				"enumValues": ["strobe", "off", "both", "siren"]
+			}
+		]
+	}, {
+		"name": "AudioNotification",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "playText",
+				"args": [{
+						"name": "text",
+						"type": "STRING",
+						"description": "Text to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "playTextAndRestore",
+				"args": [{
+						"name": "text",
+						"type": "STRING",
+						"description": "Text to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "playTextAndResume",
+				"args": [{
+						"name": "text",
+						"type": "STRING",
+						"description": "Text to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "playTrack",
+				"args": [{
+						"name": "trackuri",
+						"type": "STRING",
+						"description": "URI/URL of track to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "playTrackAndRestore",
+				"args": [{
+						"name": "trackuri",
+						"type": "STRING",
+						"description": "URI/URL of track to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "playTrackAndResume",
+				"args": [{
+						"name": "trackuri",
+						"type": "STRING",
+						"description": "URI/URL of track to play",
+						"required": true
+					}
+				]
+			}
+		]
+	}, {
+		"name": "AudioVolume",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "mute"
+			}, {
+				"name": "setVolume",
+				"args": [{
+						"name": "volumelevel",
+						"type": "NUMBER",
+						"description": "Volume level (0 to 100)",
+						"required": true
+					}
+				]
+			}, {
+				"name": "unmute"
+			}, {
+				"name": "volumeDown"
+			}, {
+				"name": "volumeUp"
+			}
+		],
+		"attributes": [{
+				"name": "mute",
+				"type": "ENUM",
+				"enumValues": ["unmuted", "muted"]
+			}, {
+				"name": "volume",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "Battery",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "battery",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "Beacon",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "presence",
+				"type": "ENUM",
+				"enumValues": ["not present", "present"]
+			}
+		]
+	}, {
+		"name": "Bulb",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "off"
+			}, {
+				"name": "on"
+			}
+		],
+		"attributes": [{
+				"name": "switch",
+				"type": "ENUM",
+				"enumValues": ["on", "off"]
+			}
+		]
+	}, {
+		"name": "Button (Deprecated)",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "button",
+				"type": "NUMBER"
+			}, {
+				"name": "holdableButton",
+				"type": "ENUM",
+				"enumValues": ["true", "false"]
+			}, {
+				"name": "numberOfButtons",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "CarbonDioxideMeasurement",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "carbonDioxide",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "CarbonMonoxideDetector",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "carbonMonoxide",
+				"type": "ENUM",
+				"enumValues": ["detected", "tested", "clear"]
+			}
+		]
+	}, {
+		"name": "ChangeLevel",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "startLevelChange",
+				"args": [{
+						"name": "direction",
+						"type": "ENUM",
+						"description": "Direction for level change request",
+						"required": true
+					}
+				]
+			}, {
+				"name": "stopLevelChange"
+			}
+		]
+	}, {
+		"name": "Chime",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "playSound",
+				"args": [{
+						"name": "soundnumber",
+						"type": "NUMBER",
+						"description": "Sound number to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "stop"
+			}
+		],
+		"attributes": [{
+				"name": "soundEffects",
+				"type": "JSON_OBJECT"
+			}, {
+				"name": "soundName",
+				"type": "STRING"
+			}, {
+				"name": "status",
+				"type": "ENUM",
+				"enumValues": ["playing", "stopped"]
+			}
+		]
+	}, {
+		"name": "ColorControl",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setColor",
+				"args": [{
+						"name": "colormap",
+						"type": "COLOR_MAP",
+						"description": "Color map settings [hue*:(0 to 100), saturation*:(0 to 100), level:(0 to 100)]",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setHue",
+				"args": [{
+						"name": "hue",
+						"type": "NUMBER",
+						"description": "Color Hue (0 to 100)",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setSaturation",
+				"args": [{
+						"name": "saturation",
+						"type": "NUMBER",
+						"description": "Color Saturation (0 to 100)",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "RGB",
+				"type": "STRING"
+			}, {
+				"name": "color",
+				"type": "STRING"
+			}, {
+				"name": "colorName",
+				"type": "STRING"
+			}, {
+				"name": "hue",
+				"type": "NUMBER"
+			}, {
+				"name": "saturation",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "ColorMode",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "colorMode",
+				"type": "ENUM",
+				"enumValues": ["CT", "RGB"]
+			}
+		]
+	}, {
+		"name": "ColorTemperature",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setColorTemperature",
+				"args": [{
+						"name": "colortemperature",
+						"type": "NUMBER",
+						"description": "Color temperature in degrees Kelvin",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "colorName",
+				"type": "STRING"
+			}, {
+				"name": "colorTemperature",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "Configuration",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "configure"
+			}
+		]
+	}, {
+		"name": "Consumable",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setConsumableStatus",
+				"args": [{
+						"name": "STRING",
+						"type": "",
+						"description": "STRING",
+						"required": false
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "consumableStatus",
+				"type": "ENUM",
+				"enumValues": ["missing", "order", "maintenance_required", "good", "replace"]
+			}
+		]
+	}, {
+		"name": "ContactSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "contact",
+				"type": "ENUM",
+				"enumValues": ["closed", "open"]
+			}
+		]
+	}, {
+		"name": "DoorControl",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "close"
+			}, {
+				"name": "open"
+			}
+		],
+		"attributes": [{
+				"name": "door",
+				"type": "ENUM",
+				"enumValues": ["unknown", "closed", "open", "closing", "opening"]
+			}
+		]
+	}, {
+		"name": "DoubleTapableButton",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "doubleTapped",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "EnergyMeter",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "energy",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "EstimatedTimeOfArrival",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "eta",
+				"type": "DATE"
+			}
+		]
+	}, {
+		"name": "FanControl",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setSpeed",
+				"args": [{
+						"name": "fanspeed",
+						"type": "ENUM",
+						"description": "Fan speed to set",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "speed",
+				"type": "ENUM",
+				"enumValues": ["low", "medium-low", "medium", "medium-high", "high", "on", "off", "auto"]
+			}
+		]
+	}, {
+		"name": "FilterStatus",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "filterStatus",
+				"type": "ENUM",
+				"enumValues": ["normal", "replace"]
+			}
+		]
+	}, {
+		"name": "GarageDoorControl",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "close"
+			}, {
+				"name": "open"
+			}
+		],
+		"attributes": [{
+				"name": "door",
+				"type": "ENUM",
+				"enumValues": ["unknown", "open", "closing", "closed", "opening"]
+			}
+		]
+	}, {
+		"name": "HealthCheck",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "ping"
+			}
+		],
+		"attributes": [{
+				"name": "checkInterval",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "HoldableButton",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "held",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "IlluminanceMeasurement",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "illuminance",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "ImageCapture",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "take"
+			}
+		],
+		"attributes": [{
+				"name": "image",
+				"type": "STRING"
+			}
+		]
+	}, {
+		"name": "Indicator",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "indicatorNever"
+			}, {
+				"name": "indicatorWhenOff"
+			}, {
+				"name": "indicatorWhenOn"
+			}
+		],
+		"attributes": [{
+				"name": "indicatorStatus",
+				"type": "ENUM",
+				"enumValues": ["never", "when on", "when off"]
+			}
+		]
+	}, {
+		"name": "Initialize",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "initialize"
+			}
+		]
+	}, {
+		"name": "Light",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "off"
+			}, {
+				"name": "on"
+			}
+		],
+		"attributes": [{
+				"name": "switch",
+				"type": "ENUM",
+				"enumValues": ["on", "off"]
+			}
+		]
+	}, {
+		"name": "LightEffects",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setEffect",
+				"args": [{
+						"name": "effectnumber",
+						"type": "NUMBER",
+						"description": "Effect number to enable",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setNextEffect"
+			}, {
+				"name": "setPreviousEffect"
+			}
+		],
+		"attributes": [{
+				"name": "effectName",
+				"type": "STRING"
+			}, {
+				"name": "lightEffects",
+				"type": "JSON_OBJECT"
+			}
+		]
+	}, {
+		"name": "LocationMode",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "mode",
+				"type": "DYNAMIC_ENUM"
+			}
+		]
+	}, {
+		"name": "Lock",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "lock"
+			}, {
+				"name": "unlock"
+			}
+		],
+		"attributes": [{
+				"name": "lock",
+				"type": "ENUM",
+				"enumValues": ["locked", "unlocked with timeout", "unlocked", "unknown"]
+			}
+		]
+	}, {
+		"name": "LockCodes",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "deleteCode",
+				"args": [{
+						"name": "codeposition",
+						"type": "NUMBER",
+						"description": "Code position number to delete",
+						"required": true
+					}
+				]
+			}, {
+				"name": "getCodes"
+			}, {
+				"name": "setCode",
+				"args": [{
+						"name": "codeposition",
+						"type": "NUMBER",
+						"description": "Code position number",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setCodeLength",
+				"args": [{
+						"name": "pincodelength",
+						"type": "NUMBER",
+						"description": "Maximum pin code lentgh for this lock",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "codeChanged",
+				"type": "ENUM",
+				"enumValues": ["added", "changed", "deleted", "failed"]
+			}, {
+				"name": "codeLength",
+				"type": "NUMBER"
+			}, {
+				"name": "lockCodes",
+				"type": "JSON_OBJECT"
+			}, {
+				"name": "maxCodes",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "MediaController",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "getAllActivities"
+			}, {
+				"name": "getCurrentActivity"
+			}, {
+				"name": "startActivity",
+				"args": [{
+						"name": "activityname",
+						"type": "STRING",
+						"description": "Name of media activity to start",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "activities",
+				"type": "JSON_OBJECT"
+			}, {
+				"name": "currentActivity",
+				"type": "STRING"
+			}
+		]
+	}, {
+		"name": "Momentary",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "push"
+			}
+		]
+	}, {
+		"name": "MotionSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "motion",
+				"type": "ENUM",
+				"enumValues": ["inactive", "active"]
+			}
+		]
+	}, {
+		"name": "MusicPlayer",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "mute"
+			}, {
+				"name": "nextTrack"
+			}, {
+				"name": "pause"
+			}, {
+				"name": "play"
+			}, {
+				"name": "playText",
+				"args": [{
+						"name": "text",
+						"type": "STRING",
+						"description": "Text to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "playTrack",
+				"args": [{
+						"name": "trackuri",
+						"type": "STRING",
+						"description": "URI/URL of track to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "previousTrack"
+			}, {
+				"name": "restoreTrack",
+				"args": [{
+						"name": "trackuri",
+						"type": "STRING",
+						"description": "URI/URL of track to restore",
+						"required": true
+					}
+				]
+			}, {
+				"name": "resumeTrack",
+				"args": [{
+						"name": "trackuri",
+						"type": "STRING",
+						"description": "URI/URL of track to play",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setLevel",
+				"args": [{
+						"name": "volumelevel",
+						"type": "NUMBER",
+						"description": "Volume level (0 to 100)",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setTrack",
+				"args": [{
+						"name": "trackuri",
+						"type": "STRING",
+						"description": "URI/URL of track to set",
+						"required": true
+					}
+				]
+			}, {
+				"name": "stop"
+			}, {
+				"name": "unmute"
+			}
+		],
+		"attributes": [{
+				"name": "level",
+				"type": "NUMBER"
+			}, {
+				"name": "mute",
+				"type": "ENUM",
+				"enumValues": ["unmuted", "muted"]
+			}, {
+				"name": "status",
+				"type": "STRING"
+			}, {
+				"name": "trackData",
+				"type": "JSON_OBJECT"
+			}, {
+				"name": "trackDescription",
+				"type": "STRING"
+			}
+		]
+	}, {
+		"name": "Notification",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "deviceNotification",
+				"args": [{
+						"name": "text",
+						"type": "STRING",
+						"description": "Notification text",
+						"required": true
+					}
+				]
+			}
+		]
+	}, {
+		"name": "Outlet",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "off"
+			}, {
+				"name": "on"
+			}
+		],
+		"attributes": [{
+				"name": "switch",
+				"type": "ENUM",
+				"enumValues": ["on", "off"]
+			}
+		]
+	}, {
+		"name": "Polling",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "poll"
+			}
+		]
+	}, {
+		"name": "PowerMeter",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "power",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "PowerSource",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "powerSource",
+				"type": "ENUM",
+				"enumValues": ["battery", "dc", "mains", "unknown"]
+			}
+		]
+	}, {
+		"name": "PresenceSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "presence",
+				"type": "ENUM",
+				"enumValues": ["present", "not present"]
+			}
+		]
+	}, {
+		"name": "PressureMeasurement",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "pressure",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "PushableButton",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "numberOfButtons",
+				"type": "NUMBER"
+			}, {
+				"name": "pushed",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "Refresh",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "refresh"
+			}
+		]
+	}, {
+		"name": "RelativeHumidityMeasurement",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "humidity",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "RelaySwitch",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "off"
+			}, {
+				"name": "on"
+			}
+		],
+		"attributes": [{
+				"name": "switch",
+				"type": "ENUM",
+				"enumValues": ["on", "off"]
+			}
+		]
+	}, {
+		"name": "ReleasableButton",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "released",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "SamsungTV",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "mute"
+			}, {
+				"name": "off"
+			}, {
+				"name": "on"
+			}, {
+				"name": "setPictureMode",
+				"args": [{
+						"name": "ENUM",
+						"type": "",
+						"description": "ENUM",
+						"required": false
+					}
+				]
+			}, {
+				"name": "setSoundMode",
+				"args": [{
+						"name": "ENUM",
+						"type": "",
+						"description": "ENUM",
+						"required": false
+					}
+				]
+			}, {
+				"name": "setVolume",
+				"args": [{
+						"name": "NUMBER",
+						"type": "",
+						"description": "NUMBER",
+						"required": false
+					}
+				]
+			}, {
+				"name": "showMessage",
+				"args": [{
+						"name": "STRING",
+						"type": "",
+						"description": "STRING",
+						"required": false
+					}
+				]
+			}, {
+				"name": "unmute"
+			}, {
+				"name": "volumeDown"
+			}, {
+				"name": "volumeUp"
+			}
+		],
+		"attributes": [{
+				"name": "messageButton",
+				"type": "JSON_OBJECT"
+			}, {
+				"name": "mute",
+				"type": "ENUM",
+				"enumValues": ["muted", "unknown", "unmuted"]
+			}, {
+				"name": "pictureMode",
+				"type": "ENUM",
+				"enumValues": ["unknown", "standard", "movie", "dynamic"]
+			}, {
+				"name": "soundMode",
+				"type": "ENUM",
+				"enumValues": ["speech", "movie", "unknown", "standard", "music"]
+			}, {
+				"name": "switch",
+				"type": "ENUM",
+				"enumValues": ["on", "off"]
+			}, {
+				"name": "volume",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "SecurityKeypad",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "armAway"
+			}, {
+				"name": "armHome"
+			}, {
+				"name": "deleteCode",
+				"args": [{
+						"name": "codeposition",
+						"type": "NUMBER",
+						"description": "Code position number to delete",
+						"required": true
+					}
+				]
+			}, {
+				"name": "disarm"
+			}, {
+				"name": "getCodes"
+			}, {
+				"name": "setCode",
+				"args": [{
+						"name": "codeposition",
+						"type": "NUMBER",
+						"description": "Code position number",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setCodeLength",
+				"args": [{
+						"name": "pincodelength",
+						"type": "NUMBER",
+						"description": "Maximum pin code lentgh for this keypad",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setEntryDelay",
+				"args": [{
+						"name": "entrancedelay",
+						"type": "NUMBER",
+						"description": "Entrance delay in seconds",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setExitDelay",
+				"args": [{
+						"name": "exitdelay",
+						"type": "NUMBER",
+						"description": "Exit delay in seconds",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "codeChanged",
+				"type": "ENUM",
+				"enumValues": ["added", "changed", "deleted", "failed"]
+			}, {
+				"name": "codeLength",
+				"type": "NUMBER"
+			}, {
+				"name": "lockCodes",
+				"type": "JSON_OBJECT"
+			}, {
+				"name": "maxCodes",
+				"type": "NUMBER"
+			}, {
+				"name": "securityKeypad",
+				"type": "ENUM",
+				"enumValues": ["disarmed", "armed home", "armed away", "unknown"]
+			}
+		]
+	}, {
+		"name": "Sensor",
+		"id": "capability.accelerationSensor"
+	}, {
+		"name": "ShockSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "shock",
+				"type": "ENUM",
+				"enumValues": ["clear", "detected"]
+			}
+		]
+	}, {
+		"name": "SignalStrength",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "lqi",
+				"type": "NUMBER"
+			}, {
+				"name": "rssi",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "SleepSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "sleeping",
+				"type": "ENUM",
+				"enumValues": ["not sleeping", "sleeping"]
+			}
+		]
+	}, {
+		"name": "SmokeDetector",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "smoke",
+				"type": "ENUM",
+				"enumValues": ["clear", "tested", "detected"]
+			}
+		]
+	}, {
+		"name": "SoundPressureLevel",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "soundPressureLevel",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "SoundSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "sound",
+				"type": "ENUM",
+				"enumValues": ["detected", "not detected"]
+			}
+		]
+	}, {
+		"name": "SpeechRecognition",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "phraseSpoken",
+				"type": "STRING"
+			}
+		]
+	}, {
+		"name": "SpeechSynthesis",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "speak",
+				"args": [{
+						"name": "text",
+						"type": "STRING",
+						"description": "Text to speak",
+						"required": true
+					}
+				]
+			}
+		]
+	}, {
+		"name": "StepSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "goal",
+				"type": "NUMBER"
+			}, {
+				"name": "steps",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "Switch",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "off"
+			}, {
+				"name": "on"
+			}
+		],
+		"attributes": [{
+				"name": "switch",
+				"type": "ENUM",
+				"enumValues": ["on", "off"]
+			}
+		]
+	}, {
+		"name": "SwitchLevel",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setLevel",
+				"args": [{
+						"name": "level",
+						"type": "NUMBER",
+						"description": "Level to set (0 to 100)",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "level",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "TV",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "channelDown"
+			}, {
+				"name": "channelUp"
+			}, {
+				"name": "volumeDown"
+			}, {
+				"name": "volumeUp"
+			}
+		],
+		"attributes": [{
+				"name": "channel",
+				"type": "NUMBER"
+			}, {
+				"name": "movieMode",
+				"type": "STRING"
+			}, {
+				"name": "picture",
+				"type": "STRING"
+			}, {
+				"name": "power",
+				"type": "STRING"
+			}, {
+				"name": "sound",
+				"type": "STRING"
+			}, {
+				"name": "volume",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "TamperAlert",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "tamper",
+				"type": "ENUM",
+				"enumValues": ["clear", "detected"]
+			}
+		]
+	}, {
+		"name": "Telnet",
+		"id": "capability.accelerationSensor"
+	}, {
+		"name": "TemperatureMeasurement",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "temperature",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "TestCapability",
+		"id": "capability.accelerationSensor"
+	}, {
+		"name": "Thermostat",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "auto"
+			}, {
+				"name": "cool"
+			}, {
+				"name": "emergencyHeat"
+			}, {
+				"name": "fanAuto"
+			}, {
+				"name": "fanCirculate"
+			}, {
+				"name": "fanOn"
+			}, {
+				"name": "heat"
+			}, {
+				"name": "off"
+			}, {
+				"name": "setCoolingSetpoint",
+				"args": [{
+						"name": "temperature",
+						"type": "NUMBER",
+						"description": "Cooling setpoint in degrees",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setHeatingSetpoint",
+				"args": [{
+						"name": "temperature",
+						"type": "NUMBER",
+						"description": "Heating setpoint in degrees",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setSchedule",
+				"args": [{
+						"name": "JSON_OBJECT",
+						"type": "",
+						"description": "JSON_OBJECT",
+						"required": false
+					}
+				]
+			}, {
+				"name": "setThermostatFanMode",
+				"args": [{
+						"name": "fanmode",
+						"type": "ENUM",
+						"description": "Fan mode to set",
+						"required": true
+					}
+				]
+			}, {
+				"name": "setThermostatMode",
+				"args": [{
+						"name": "thermostatmode",
+						"type": "ENUM",
+						"description": "Thermostat mode to set",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "coolingSetpoint",
+				"type": "NUMBER"
+			}, {
+				"name": "heatingSetpoint",
+				"type": "NUMBER"
+			}, {
+				"name": "schedule",
+				"type": "JSON_OBJECT"
+			}, {
+				"name": "supportedThermostatFanModes",
+				"type": "ENUM",
+				"enumValues": ["on", "circulate", "auto"]
+			}, {
+				"name": "supportedThermostatModes",
+				"type": "ENUM",
+				"enumValues": ["auto", "off", "heat", "emergency heat", "cool"]
+			}, {
+				"name": "temperature",
+				"type": "NUMBER"
+			}, {
+				"name": "thermostatFanMode",
+				"type": "ENUM",
+				"enumValues": ["on", "circulate", "auto"]
+			}, {
+				"name": "thermostatMode",
+				"type": "ENUM",
+				"enumValues": ["auto", "off", "heat", "emergency heat", "cool"]
+			}, {
+				"name": "thermostatOperatingState",
+				"type": "ENUM",
+				"enumValues": ["heating", "pending cool", "pending heat", "vent economizer", "idle", "cooling", "fan only"]
+			}, {
+				"name": "thermostatSetpoint",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "ThermostatCoolingSetpoint",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setCoolingSetpoint",
+				"args": [{
+						"name": "temperature",
+						"type": "NUMBER",
+						"description": "Cooling setpoint in degrees",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "coolingSetpoint",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "ThermostatFanMode",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "fanAuto"
+			}, {
+				"name": "fanCirculate"
+			}, {
+				"name": "fanOn"
+			}, {
+				"name": "setThermostatFanMode",
+				"args": [{
+						"name": "fanmode",
+						"type": "ENUM",
+						"description": "Fan mode to set",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "thermostatFanMode",
+				"type": "ENUM",
+				"enumValues": ["auto", "circulate", "on"]
+			}
+		]
+	}, {
+		"name": "ThermostatHeatingSetpoint",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setHeatingSetpoint",
+				"args": [{
+						"name": "temperature",
+						"type": "NUMBER",
+						"description": "Heating setpoint in degrees",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "heatingSetpoint",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "ThermostatMode",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "auto"
+			}, {
+				"name": "cool"
+			}, {
+				"name": "emergencyHeat"
+			}, {
+				"name": "heat"
+			}, {
+				"name": "off"
+			}, {
+				"name": "setThermostatMode",
+				"args": [{
+						"name": "thermostatmode",
+						"type": "ENUM",
+						"description": "Thermostat mode to set",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "thermostatMode",
+				"type": "ENUM",
+				"enumValues": ["heat", "cool", "emergency heat", "auto", "off"]
+			}
+		]
+	}, {
+		"name": "ThermostatOperatingState",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "thermostatOperatingState",
+				"type": "ENUM",
+				"enumValues": ["vent economizer", "pending cool", "cooling", "heating", "pending heat", "fan only", "idle"]
+			}
+		]
+	}, {
+		"name": "ThermostatSchedule",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "setSchedule",
+				"args": [{
+						"name": "JSON_OBJECT",
+						"type": "",
+						"description": "JSON_OBJECT",
+						"required": false
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "schedule",
+				"type": "JSON_OBJECT"
+			}
+		]
+	}, {
+		"name": "ThermostatSetpoint",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "thermostatSetpoint",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "ThreeAxis",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "threeAxis",
+				"type": "VECTOR3"
+			}
+		]
+	}, {
+		"name": "TimedSession",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "cancel"
+			}, {
+				"name": "pause"
+			}, {
+				"name": "setTimeRemaining",
+				"args": [{
+						"name": "NUMBER",
+						"type": "",
+						"description": "NUMBER",
+						"required": false
+					}
+				]
+			}, {
+				"name": "start"
+			}, {
+				"name": "stop"
+			}
+		],
+		"attributes": [{
+				"name": "sessionStatus",
+				"type": "ENUM",
+				"enumValues": ["stopped", "canceled", "running", "paused"]
+			}, {
+				"name": "timeRemaining",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "Tone",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "beep"
+			}
+		]
+	}, {
+		"name": "TouchSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "touch",
+				"type": "ENUM",
+				"enumValues": ["touched"]
+			}
+		]
+	}, {
+		"name": "UltravioletIndex",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "ultravioletIndex",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "Valve",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "close"
+			}, {
+				"name": "open"
+			}
+		],
+		"attributes": [{
+				"name": "valve",
+				"type": "ENUM",
+				"enumValues": ["open", "closed"]
+			}
+		]
+	}, {
+		"name": "VideoCamera",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "flip"
+			}, {
+				"name": "mute"
+			}, {
+				"name": "off"
+			}, {
+				"name": "on"
+			}, {
+				"name": "unmute"
+			}
+		],
+		"attributes": [{
+				"name": "camera",
+				"type": "ENUM",
+				"enumValues": ["on", "off", "restarting", "unavailable"]
+			}, {
+				"name": "mute",
+				"type": "ENUM",
+				"enumValues": ["unmuted", "muted"]
+			}, {
+				"name": "settings",
+				"type": "JSON_OBJECT"
+			}, {
+				"name": "statusMessage",
+				"type": "STRING"
+			}
+		]
+	}, {
+		"name": "VideoCapture",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "capture",
+				"args": [{
+						"name": "DATE",
+						"type": "",
+						"description": "DATE",
+						"required": false
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "clip",
+				"type": "JSON_OBJECT"
+			}
+		]
+	}, {
+		"name": "VoltageMeasurement",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "voltage",
+				"type": "NUMBER"
+			}
+		]
+	}, {
+		"name": "WaterSensor",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "water",
+				"type": "ENUM",
+				"enumValues": ["wet", "dry"]
+			}
+		]
+	}, {
+		"name": "WindowShade",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "close"
+			}, {
+				"name": "open"
+			}, {
+				"name": "setPosition",
+				"args": [{
+						"name": "position",
+						"type": "NUMBER",
+						"description": "Shade position (0 to 100)",
+						"required": true
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "position",
+				"type": "NUMBER"
+			}, {
+				"name": "position",
+				"type": "NUMBER"
+			}, {
+				"name": "windowShade",
+				"type": "ENUM",
+				"enumValues": ["opening", "partially open", "closed", "open", "closing", "unknown"]
+			}
+		]
+	}, {
+		"name": "ZwMultichannel",
+		"id": "capability.accelerationSensor",
+		"commands": [{
+				"name": "enableEpEvents",
+				"args": [{
+						"name": "STRING",
+						"type": "",
+						"description": "STRING",
+						"required": false
+					}
+				]
+			}, {
+				"name": "epCmd",
+				"args": [{
+						"name": "NUMBER",
+						"type": "",
+						"description": "NUMBER",
+						"required": false
+					}
+				]
+			}
+		],
+		"attributes": [{
+				"name": "epEvent",
+				"type": "STRING"
+			}, {
+				"name": "epInfo",
+				"type": "STRING"
+			}
+		]
+	}, {
+		"name": "pHMeasurement",
+		"id": "capability.accelerationSensor",
+		"attributes": [{
+				"name": "pH",
+				"type": "NUMBER"
+			}
+		]
+	}
+]
